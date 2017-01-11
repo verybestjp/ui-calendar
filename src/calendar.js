@@ -283,6 +283,10 @@ angular.module('ui.calendar', [])
                         if (!calendar) {
                             calendar = $(elm).html('');
                         }
+                        // (masayosh4) add calendar attribute to options.id
+                        if (attrs.calendar) {
+                            options.id = attrs.calendar;
+                        }
                         calendar.fullCalendar(options);
                         if (attrs.calendar) {
                             uiCalendarConfig.calendars[attrs.calendar] = calendar;
