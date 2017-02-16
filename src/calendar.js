@@ -273,9 +273,11 @@ angular.module('ui.calendar', [])
                             calendar.fullCalendar('destroy');
                         }
                         if (attrs.calendar) {
-                            calendar = uiCalendarConfig.calendars[attrs.calendar] = angular.element(elm).html('');
+                            // (masayosh4) replace angular.element to $. angular.element return jQLite
+                            calendar = uiCalendarConfig.calendars[attrs.calendar] = $(elm).html('');
                         } else {
-                            calendar = angular.element(elm).html('');
+                            // (masayosh4) replace angular.element to $. angular.element return jQLite
+                            calendar = $(elm).html('');
                         }
                     };
 
