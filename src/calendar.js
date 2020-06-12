@@ -7,7 +7,7 @@
 *       The calendar will watch any eventSource array and update itself when a change is made.
 *
 */
-const jquery = require('jquery');
+/* global jQuery */
 
 angular.module('ui.calendar', [])
 
@@ -275,16 +275,16 @@ angular.module('ui.calendar', [])
                         }
                         if (attrs.calendar) {
                             // (masayosh4) replace angular.element to $. angular.element return jqLite
-                            calendar = uiCalendarConfig.calendars[attrs.calendar] = jquery(elm).html('');
+                            calendar = uiCalendarConfig.calendars[attrs.calendar] = jQuery(elm).html('');
                         } else {
                             // (masayosh4) replace angular.element to $. angular.element return jqLite
-                            calendar = jquery(elm).html('');
+                            calendar = jQuery(elm).html('');
                         }
                     };
 
                     scope.initCalendar = function () {
                         if (!calendar) {
-                            calendar = jquery(elm).html('');
+                            calendar = jQuery(elm).html('');
                         }
                         // (masayosh4) add calendar attribute to options.id
                         if (attrs.calendar) {
